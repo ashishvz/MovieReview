@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/matteBlack">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/posterCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen230dp"
+                android:layout_margin="@dimen/margin10dp"
+                app:cardCornerRadius="@dimen/radius10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/backdropImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/backtest" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/movieName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize28"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/posterCard" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/originalMovieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:textColor="@color/white"
+                android:textDirection="anyRtl"
+                android:textSize="@dimen/textSize20"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/movieOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/originalMovieName"
+                tools:targetApi="o" />
+
+
+            <ImageView
+                android:id="@+id/ratingStar"
+                android:layout_width="@dimen/width30dp"
+                android:layout_height="@dimen/width30dp"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:padding="@dimen/padding5dp"
+                android:src="@drawable/icon_rating_star"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/voteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize16"
+                app:layout_constraintRight_toLeftOf="@id/voteCount"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
+
+            <ImageView
+                android:id="@+id/voteCount"
+                android:layout_width="@dimen/width30dp"
+                android:layout_height="@dimen/width30dp"
+                android:layout_marginEnd="@dimen/margin10dp"
+                android:padding="@dimen/padding5dp"
+                android:src="@drawable/icon_heart"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ratingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize16"
+                app:layout_constraintLeft_toRightOf="@id/ratingStar"
+                app:layout_constraintTop_toBottomOf="@id/movieOverview" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/languageChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/charcoal"
+                app:chipIcon="@drawable/icon_language"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingStar" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/countryChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/charcoal"
+                app:chipIcon="@drawable/icon_country"
+                app:layout_constraintLeft_toRightOf="@id/languageChip"
+                app:layout_constraintTop_toBottomOf="@id/ratingStar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

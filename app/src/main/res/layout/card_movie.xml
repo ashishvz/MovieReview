@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/movieCard"
+        android:layout_width="@dimen/width180dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10dp"
+        app:cardBackgroundColor="@color/jetBlack"
+        app:cardCornerRadius="@dimen/radius8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/padding10dp">
+
+            <ImageView
+                android:id="@+id/moviePosterImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height270"
+                android:scaleType="centerInside"
+                android:src="@drawable/movie"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ratingStar"
+                android:layout_width="@dimen/dimen15dp"
+                android:layout_height="@dimen/dimen15dp"
+                android:layout_marginStart="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:src="@drawable/icon_rating_star"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/moviePosterImageView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ratingCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize12"
+                app:layout_constraintLeft_toRightOf="@id/ratingStar"
+                app:layout_constraintTop_toBottomOf="@id/moviePosterImageView" />
+
+            <ImageView
+                android:id="@+id/voteImage"
+                android:layout_width="@dimen/dimen15dp"
+                android:layout_height="@dimen/padding16dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginEnd="@dimen/margin2dp"
+                android:src="@drawable/icon_heart"
+                app:layout_constraintRight_toLeftOf="@id/voteCount"
+                app:layout_constraintTop_toBottomOf="@id/moviePosterImageView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/voteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginEnd="@dimen/margin5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize12"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/moviePosterImageView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/movieNameText"
+                android:layout_width="@dimen/width180dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingStar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
